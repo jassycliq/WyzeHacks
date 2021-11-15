@@ -62,6 +62,13 @@ case $WYZEAPP_VER in
     export SPEAKER_GPIO=63
     export MMC_GPIO_REDIR="$WYZEHACK_DIR/mmc_gpio_value.txt"
     ;;
+4.61.*)
+    # Cam V3 RTSP
+    export DEVICE_ID=$(grep -E -o CONFIG_INFO=[0-9A-F]+ /configs/.product_config | cut -c 13-24)
+    export DEVICE_MODEL="V3"
+    export SPEAKER_GPIO=63
+    export MMC_GPIO_REDIR="$WYZEHACK_DIR/mmc_gpio_value.txt"
+    ;;
 
 *)
     # Unknown
